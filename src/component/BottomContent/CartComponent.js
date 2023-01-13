@@ -16,10 +16,17 @@ export default function CartComponent(props) {
 
     // upon clicking the basket button we need to 
     // - display review modal 
-    // -but only if there are items in cart
-    function startReviewCheck() {
+    // -but only if there are items in cart 
+
+    function openModal(whichModal) {
         if (props.selectedItems.length !== 0) {
+            if (whichModal==="Review") {
             props.setIsSuccess(false);
+        } else
+        {
+            props.setIsSuccess(true); 
+            props.setSelectedItems([]);
+        }
             props.setDisplayModal(true);
         }
     }
@@ -29,20 +36,14 @@ export default function CartComponent(props) {
             transition={{ duration: 1.5 }}
             initial={{ scale: 0 }}
             className='innerItemsContainer'>
-            <span className='basketContainer1' onClick={() => startReviewCheck()}>
+            <span className='basketContainer1' onClick={() => openModal("Review")}>
                 <img src={require('../../icons/shopping-basket (1) 2.png')} />
             </span>
             <span className='sumPriceStyle'>{sum !== 0 ? sum : "0.00"}$</span>
             <input type="button" value="Order Now"
              className='orderNowButton' 
              disabled={props.selectedItems.length === 0}
-                onClick={() => {
-                    // when we order the success modal should appear and selectedItems are reset
-                    props.setIsSuccess(true);
-                    props.setDisplayModal(true);
-                    props.setSelectedItems([]);
-                }
-                } />
+                onClick={() =>openModal("Success")} />
         </motion.div>
     );
 }
