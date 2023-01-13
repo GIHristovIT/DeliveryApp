@@ -1,0 +1,42 @@
+@mixin windowPredef {
+  display: flex;
+  background: #FFFFFF;
+  margin-left: 10.28%;
+}
+
+#headerMainContainer {
+  @include windowPredef;
+  margin-top: 1vh; 
+}
+
+#MidMainContainer {
+  @include windowPredef;
+  margin-top: 3.30vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+@mixin cartGrayDiv {
+  display: flex;  
+  margin-top: 6vh;
+  margin-bottom: 4vh;
+  height: 8vh;
+  background: #F9F6F6;
+  border-radius: 15px;
+  justify-content: space-around;
+}
+
+.cartGrayDivPage {
+  @include cartGrayDiv;  
+  width: 33.06%;
+}
+
+.cartGrayDivModal {
+  @include cartGrayDiv;  
+  width: 100%;
+}

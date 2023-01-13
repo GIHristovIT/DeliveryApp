@@ -1,0 +1,101 @@
+.cardsMasterContainer {
+    display: -webkit-inline-box;
+    justify-content: space-around;
+    gap: 4.08%; 
+    width: 100%;   
+    overflow-x:scroll;    
+}
+
+.cardsMasterContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.cardWrapper {
+    position: relative;
+    margin-top: 4.73%;
+    width: 16.92%;
+    align-items: center;   
+    background: #F9F6F6;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;    
+}
+
+.foodPictureContainer {
+    position: relative;
+    top: 0%;
+    left:0%;
+    width:40px;
+    height:80px;
+}
+
+.foodPictureContainer img {
+    width: 192px;
+    height: 120px;
+    position: absolute;
+    top: -60%;
+    left: -1%;
+    z-index: 1;
+}
+
+
+@mixin commonCardSettings {
+    font-family: Poppins;
+    font-style: normal;
+    justify-content: space-around;
+    display: flex;
+}
+
+@mixin namePriceCommon {
+    font-weight: 700;
+    color: #363636;
+}
+
+.cardName {
+    @include commonCardSettings;
+    @include namePriceCommon;
+    font-size: 20px;
+    line-height: 425%;
+    margin-top: 1%;
+}
+
+.cardCaption {
+    @include commonCardSettings;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 55%;
+    color: #797979
+}
+
+.cardPrice {
+    @include commonCardSettings;
+    @include namePriceCommon;
+    font-size: 13px;
+    line-height: 130%;
+    margin-top: 12%
+}
+
+.dolar {
+    color: #FF8515
+}
+
+.basketContainer {
+    cursor:pointer;
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 7px;
+    position: relative;
+    left: 30%;
+    margin-bottom: 8%;
+    &:hover {
+        scale: 1.2;
+        background:rgb(195, 195, 202);
+    }
+}
+
+.basketPicture {
+    position: relative;
+    top: 25%;
+    left: 25%;
+}

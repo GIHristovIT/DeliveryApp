@@ -1,0 +1,124 @@
+.modPositionAndBackground{
+  display:flex;
+  flex-direction:column;
+  z-index:4;
+  position: fixed;
+  left:0;
+  right:0; 
+  top:0; 
+  bottom:0; 
+  background-color:rgba(255, 255, 255, 0.84);
+  backdrop-filter:blur(2px); 
+  align-items:center;
+  justify-content:center; 
+  width:100%;  
+}
+
+@mixin modalBasicSettings {
+  display:flex;
+  flex-direction:column;
+  z-index:4;
+  position: fixed;
+  left:0;
+  right:0; 
+  top:0; 
+  background-color:rgba(255, 255, 255, 0.84);
+  backdrop-filter:blur(2px); 
+  align-items:center;
+  justify-content:center;
+  width:100%;
+}
+
+.modSuccessAndBackground{
+  @include modalBasicSettings;   
+  bottom:0;    
+}
+
+.modReviewAndBackground{
+  @include modalBasicSettings;   
+  bottom:42%;    
+}
+
+@mixin modalCont {
+  display:flex;
+flex-direction: column;
+width: 615px;
+height: 370px;
+background: #F9F6F6;
+border-radius: 15px;
+justify-content: space-around;
+}
+
+.modalSuccessContent {
+  @include modalCont;
+align-items: center;
+}
+
+.modalReviewContent {
+  @include modalCont;      
+    }   
+
+.congratLabel {
+width: 355px;
+height: 52px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 65px;
+display: flex;
+align-items: center;
+color: #FF8515;
+}
+
+/* Your order it’s on its way. */
+.succcessCaption {
+width: 267px;
+height: 52px;
+left: 596px;
+top: 479px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 65px;
+display: flex;
+align-items: center;
+color: #797979;
+}
+
+@mixin modalRows {
+  font-size: 20px;
+  margin-left: 10%;
+  width: 80%;
+  font-weight: 700;
+  color: #363636;
+  justify-content: space-between;
+  font-family: Poppins;
+  font-style: normal;  
+  display: flex;
+}
+
+.purchasePrice { 
+  @include modalRows;  
+  line-height: 225%;
+}
+
+.totalPrice { 
+    @include modalRows; 
+    line-height: 425%;
+    border-top:2px solid rgba(121, 121, 121, 0.4);   
+}
+
+.dragable1 {    
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+    width: 100%;  
+    overflow-y:scroll;  
+}
+
+.dragable1::-webkit-scrollbar {
+  display: none;
+}

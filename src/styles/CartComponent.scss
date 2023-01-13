@@ -1,0 +1,55 @@
+.innerItemsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+
+@mixin orangeButton {
+    cursor: pointer;
+    width: 154px;  
+    background: #FF8515;
+    justify-content: center;
+    border: none;
+    border-radius: 15px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    color: #FFFFFF;
+    &:hover {
+        background: rgb(228, 135, 14);
+        scale: 1.1;
+    }
+}
+
+.orderNowButton { 
+    @include orangeButton; 
+    height: 70%;  
+}
+
+.buttonOk {
+    @include orangeButton; 
+    height: 54px;
+}
+
+.sumPriceStyle {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    align-items: center;
+    color: #363636;
+}
+
+.basketContainer1 {
+    display: flex;
+    width: 30px;
+    height: 30px;
+        &:hover {        
+        scale: 1.2;       
+    }
+}
